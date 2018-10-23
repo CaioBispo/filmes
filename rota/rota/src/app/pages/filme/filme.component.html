@@ -1,0 +1,16 @@
+<div class="jumbotron">
+<div class="row">
+    <div class="col-md-2" *ngFor="let f of filmes">
+
+      <div class="card">
+        <img class="card-img-top" height="300" src= "{{f.Poster}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ f.Title }}</h5>
+          <p class="card-text"><small class="text-muted">{{ f.Year }}, {{ f.Genre }}</small></p>
+          <a href="javascript:void(0);" class="card-link">{{ f.Director }}</a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

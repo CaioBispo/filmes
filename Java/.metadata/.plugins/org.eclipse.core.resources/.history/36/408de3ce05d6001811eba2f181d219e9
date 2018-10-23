@@ -1,0 +1,78 @@
+package br.com.cast.recomenda.Entidade;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="filme", schema="filme_recomenda")
+public class Filme {
+
+		@Id
+		@SequenceGenerator(name = "gerador_filme_id_seq", sequenceName = "filme_id_seq", schema = "filme_recomenda", allocationSize = 1)
+		@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "gerador_filme_id_seq")
+		private Integer id;
+		
+		private String titulo;
+		private String genero;
+		private Integer positivo;
+		private Integer negativo;
+		private Integer neutro;
+		private String media;
+		private String imagem;
+		
+		
+		public Integer getId() {
+			return id;
+		}
+		public void setId(Integer id) {
+			this.id = id;
+		}
+		public String getTitulo() {
+			return titulo;
+		}
+		public void setTitulo(String titulo) {
+			this.titulo = titulo;
+		}
+		public String getGenero() {
+			return genero;
+		}
+		public void setGenero(String genero) {
+			this.genero = genero;
+		}
+		public Integer getPositivo() {
+			return positivo;
+		}
+		public void setPositivo(Integer positivo) {
+			this.positivo = positivo;
+		}
+		public Integer getNegativo() {
+			return negativo;
+		}
+		public void setNegativo(Integer negativo) {
+			this.negativo = negativo;
+		}
+		public Integer getNeutro() {
+			return neutro;
+		}
+		public void setNeutro(Integer neutro) {
+			this.neutro = neutro;
+		}
+		public String getMedia() {
+			return media;
+		}
+		public void setMedia(String media) {
+			this.media = media;
+		}
+		public String getImagem() {
+			return imagem;
+		}
+		public void setImagem(String imagem) {
+			this.imagem = imagem;
+		}
+
+		
+}

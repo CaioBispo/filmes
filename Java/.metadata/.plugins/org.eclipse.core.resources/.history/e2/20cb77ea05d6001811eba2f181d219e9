@@ -1,0 +1,66 @@
+package br.com.cast.recomenda.DTO;
+
+public class FilmeDTO {
+
+	
+	private Integer id;
+	
+	private String titulo;
+	private String genero;
+	private Integer positivo;
+	private Integer negativo;
+	private Integer neutro;
+	private String media;
+	private String imagem;
+	
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getTitulo() {
+		return titulo;
+	}
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+	public String getGenero() {
+		return genero;
+	}
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+	public Integer getPositivo() {
+		return positivo;
+	}
+	public void setPositivo(Integer positivo) {
+		this.positivo = positivo;
+	}
+	public Integer getNegativo() {
+		return negativo;
+	}
+	public void setNegativo(Integer negativo) {
+		this.negativo = negativo;
+	}
+	public Integer getNeutro() {
+		return neutro;
+	}
+	public void setNeutro(Integer neutro) {
+		this.neutro = neutro;
+	}
+	public String getMedia() {
+		return media;
+	}
+	public void setMedia(String media) {
+		this.media = media;
+	}
+	public String getImagem() {
+		return imagem;
+	}
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
+	}
+
+}

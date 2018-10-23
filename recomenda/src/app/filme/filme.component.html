@@ -1,0 +1,52 @@
+<div style="text-align:center">
+  <fieldset>
+    <legend>Buscar Filmes</legend>
+
+    <table>
+      <tr>
+        <td>
+          <label>Nome: </label>
+        </td>
+
+        <td>
+          <input type="text" [(ngModel)]="filme.Titulo"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Genero: </label>
+        </td>
+
+        <td>
+          <input type="text"[(ngModel)]="filme.Genero"  />
+        </td>
+        <td>
+          <button (click)="pesquisar()">Pesquisar</button>
+        </td>
+      </tr>
+
+    </table>
+  </fieldset>
+</div>
+<div>
+  <fieldset>
+    <legend> Resultados </legend>
+    <table border="1">
+      <thead>
+        <td>Titulo</td>
+        <td>Genero</td>
+        <td>Ano</td>
+        <td>Diretor</td>
+      </thead>
+      <tbody>
+        <tr *ngFor="let f of filmes">
+          <td>{{ f.Title }}</td>
+          <td>{{ f.Genre }}</td>
+          <td>{{ f.Year }}</td>
+          <td>{{ f.Director }}</td>
+          <td><img src= "{{f.Poster}}"> </td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+</div>

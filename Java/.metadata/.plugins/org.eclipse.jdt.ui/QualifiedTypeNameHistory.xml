@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+<fullyQualifiedTypeName name="br.com.cast.recomenda.Repository.RecomendaRepository"/>
+<fullyQualifiedTypeName name="br.com.cast.recomenda.Entidade.Filme"/>
+<fullyQualifiedTypeName name="org.springframework.web.client.RestTemplate"/>
+<fullyQualifiedTypeName name="org.springframework.boot.web.client.RestTemplateBuilder"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="br.com.cast.recomenda.Client.RecomendaClient"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+<fullyQualifiedTypeName name="br.com.cast.recomenda.DTO.FilmeDTO"/>
+<fullyQualifiedTypeName name="javax.persistence.Column"/>
+<fullyQualifiedTypeName name="br.com.cast.recomenda.DTO.FilmeFullDTO"/>
+<fullyQualifiedTypeName name="br.com.cast.recomenda.Entidade.FilmeFull"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="br.com.cast.recomenda.DTO.SearchDTO"/>
+<fullyQualifiedTypeName name="br.com.cast.recomenda.DTO.FilmeSmallDTO"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonProperty"/>
+<fullyQualifiedTypeName name="br.com.cast.recomenda.DTO.SearchSmallDTO"/>
+<fullyQualifiedTypeName name="br.com.cast.recomenda.Entidade.FilmeSmall"/>
+<fullyQualifiedTypeName name="javax.transaction.Transactional"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,19 @@
+package br.com.cast.recomenda.DTO;
+
+public class FilmeFullDTO {
+
+	
+	private String imdbID;
+
+	private String released;
+	private String runtime;
+	private String genre;
+	private String director;
+	private String writer;
+	private String actors;
+	private String plot;
+	private String language;
+	private String country;
+	private String awards;
+	private String production;
+}

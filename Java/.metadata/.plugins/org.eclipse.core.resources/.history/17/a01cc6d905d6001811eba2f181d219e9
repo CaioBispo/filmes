@@ -1,0 +1,35 @@
+package br.com.cast.recomenda.Entidade;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="filme", schema="filme_recomenda")
+public class Filme {
+
+		@Id
+		@SequenceGenerator(name = "gerador_filme_id_seq", sequenceName = "filme_id_seq", schema = "filme_recomenda", allocationSize = 1)
+		@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "gerador_filme_id_seq")
+		private Integer id;
+		
+		private String title;
+		private String year;
+		private String released;
+		private String runtime;
+		private String genre;
+		private String director;
+		private String writer;
+		private String actors;
+		private String plot;
+		private String language;
+		private String country;
+		private String awards;
+		private String poster;
+		private String aroduction;
+
+		
+}

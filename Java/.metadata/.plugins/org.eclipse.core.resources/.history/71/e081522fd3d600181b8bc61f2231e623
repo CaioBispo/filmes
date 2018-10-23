@@ -1,0 +1,78 @@
+package br.com.cast.recomenda.DTO;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class FilmeSmallDTO {
+
+	@JsonProperty("imdbID")
+	private String imdbID;
+	@JsonProperty("Title")
+	private String title;
+	@JsonProperty("Year")
+	private String year;
+	@JsonProperty("Tipe")
+	private String tipe;
+	@JsonProperty("Poster")
+	private String poster;
+	
+	
+	private Integer id;
+	@JsonProperty("Title")
+	private String title;
+	@JsonProperty("Year")
+	private String year;
+	@JsonProperty("Released")
+	private String released;
+	@JsonProperty("Runtime")
+	private String runtime;
+	@JsonProperty("Genre")
+	private String genre;
+	@JsonProperty("Director")
+	private String director;
+	@JsonProperty("Writer")
+	private String writer;
+	@JsonProperty("Actors")
+	private String actors;
+	@JsonProperty("Plot")
+	private String plot;
+	@JsonProperty("Language")
+	private String language;
+	@JsonProperty("Country")
+	private String country;
+	@JsonProperty("Awards")
+	private String awards;
+	@JsonProperty("Poster")
+	private String poster;
+	@JsonProperty("Production")
+	private String production;
+	public String getImdbID() {
+		return imdbID;
+	}
+	public void setImdbID(String imdbID) {
+		this.imdbID = imdbID;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getYear() {
+		return year;
+	}
+	public void setYear(String year) {
+		this.year = year;
+	}
+	public String getTipe() {
+		return tipe;
+	}
+	public void setTipe(String tipe) {
+		this.tipe = tipe;
+	}
+	public String getPoster() {
+		return poster;
+	}
+	public void setPoster(String poster) {
+		this.poster = poster;
+	}
+}

@@ -1,0 +1,31 @@
+package br.com.cast.recomenda.Entidade;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+public class Filme {
+
+	@Entity
+	@Table(name="filme_recomenda", schema="filme")
+	public class Weather {
+
+		@Id
+		@SequenceGenerator(name = "gerador_filme_id_seq", sequenceName = "filme_id_seq", schema = "filme", allocationSize = 1)
+		@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "gerador_filme_id_seq")
+		private Integer id;
+		
+		private String cidade;
+		private String main;
+		private String icon;
+		private String tempMin;
+		private String tempMax;
+		private String pressao;
+		private String umidade;
+		private String vento;
+		private String data;
+		
+}

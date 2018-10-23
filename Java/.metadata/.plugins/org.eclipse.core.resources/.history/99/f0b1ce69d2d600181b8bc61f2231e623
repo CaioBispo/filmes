@@ -1,0 +1,5 @@
+package br.com.cast.recomenda.Entidade;
+
+public class FilmeFull {
+
+}

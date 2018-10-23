@@ -1,0 +1,118 @@
+package br.com.cast.recomenda.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import br.com.cast.recomenda.Client.RecomendaClient;
+import br.com.cast.recomenda.DTO.FilmeDTO;
+import br.com.cast.recomenda.DTO.FilmeSmallDTO;
+import br.com.cast.recomenda.Entidade.Filme;
+import br.com.cast.recomenda.Entidade.FilmeSmall;
+import br.com.cast.recomenda.Repository.RecomendaRepository;
+
+@Service
+public class RecomendaService {
+
+	@Autowired
+	private RecomendaRepository repository;
+	
+	@Autowired
+	private RecomendaClient api;
+	
+
+
+	@Transactional
+	public void addFilme(FilmeDTO dto) {
+		Filme filmeEntidade = convertToEntidade(dto);
+		repository.add(filmeEntidade);
+	}
+
+	@Transactional
+	public List<FilmeDTO> buscaTodos() {
+		List<Filme> filmes = new ArrayList<>();
+		List<FilmeDTO> filmesDTO = new ArrayList<>();
+
+		filmes = repository.buscarTodos();
+
+		for (Filme f : filmes) {
+			FilmeDTO fDTO = new FilmeDTO();
+			fDTO = convertToDTO(f);
+			filmesDTO.add(fDTO);
+		}
+		return filmesDTO;
+	}
+
+	@Transactional
+	public FilmeDTO buscaPorTitulo(String title) {
+		
+		FilmeDTO filmeDTO;
+		
+		Filme filme = repository.buscaPorTitulo(title);
+		
+		if(filme == null) {
+			filmeDTO = api.getFilmeNaNuvem(title);
+			filme = convertToEntidade(filmeDTO);
+			repository.add(filme);
+		}else {
+			filmeDTO = convertToDTO(filme);
+		}
+
+		return filmeDTO;
+	}
+	
+	
+	public FilmeSmall convertToEntidadeSmall(FilmeSmallDTO dto) {
+		
+		FilmeSmall filme = new FilmeSmall();
+		
+		filme.setImdbID(dto.getImdbID());
+		filme.setPoster(dto.getPoster());
+		filme.setTipe(dto.getTipe());
+		filme.setTitle(dto.getTitle());
+		filme.setYear(dto.getYear());
+		
+		return null;
+	}
+	
+public FilmeSmall convertToDTOSmall(FilmeSmall filme) {
+		
+		FilmeSmallDTO dto = new FilmeSmallDTO();
+		
+		dto.setImdbID(filme.getImdbID());
+		dto.setPoster(filme.getPoster());
+		dto.setTipe(filme.getTipe());
+		dto.setTitle(filme.getTitle());
+		dto.setYear(filme.getYear());
+		
+		return null;
+	}
+	
+	public Filme convertToEntidade(FilmeDTO dto) {
+		
+		Filme filmeEntidade = new Filme();
+		
+		filmeEntidade.setId(dto.getId());
+		filmeEntidade.setActors(dto.getActors());
+		filmeEntidade.setProduction(dto.getProduction());
+		filmeEntidade.setAwards(dto.getAwards());
+		filmeEntidade.setCountry(dto.getCountry());
+		filmeEntidade.setDirector(dto.getDirector());
+		filmeEntidade.setGenre(dto.getGenre());
+		filmeEntidade.setLanguage(dto.getLanguage());
+		filmeEntidade.setPlot(dto.getPlot());
+		filmeEntidade.setPoster(dto.getPoster());
+		filmeEntidade.setReleased(dto.getReleased());
+		filmeEntidade.setRuntime(dto.getRuntime());
+		filmeEntidade.setTitle(dto.getTitle());
+		filmeEntidade.setWriter(dto.getWriter());
+		filmeEntidade.setYear(dto.getYear());
+		
+		return filmeEntidade;
+	}
+
+
+}

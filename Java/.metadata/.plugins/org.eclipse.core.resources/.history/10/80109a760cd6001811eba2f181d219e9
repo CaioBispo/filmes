@@ -1,0 +1,44 @@
+package br.com.cast.recomenda.Repository;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
+import org.springframework.stereotype.Repository;
+
+import br.com.cast.recomenda.DTO.FilmeDTO;
+import br.com.cast.recomenda.Entidade.Filme;
+
+@Repository
+public class RecomendaRepository {
+	
+	@PersistenceContext
+	private EntityManager em;
+	
+
+	public void add(Filme filme) {
+		em.persist(filme);
+	}
+	
+	public List<Filme> buscarTodos() {
+		StringBuilder jpql = new StringBuilder();
+		jpql.append("select f ")
+			.append("from ").append(Filme.class.getName()).append(" f ");
+
+		Query query = em.createQuery(jpql.toString());
+		return query.getResultList();
+	}
+	
+	public FilmeDTO buscaPorTitulo(String title) {
+		StringBuilder jpql = new StringBuilder();
+		jpql.append("select f ")
+			.append("from ").append(Filme.class.getName()).append(" f ")
+			.append("where title = (:title)");
+
+		Query query = em.createQuery(jpql.toString());
+			  query.setParameter("title", title);
+		return (FilmeDTO) query.getSingleResult();
+	}
+}

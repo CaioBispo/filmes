@@ -1,0 +1,27 @@
+package br.com.cast.recomenda.Service;
+
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
+
+import br.com.cast.apiClima.DTO.WeatherDTO;
+
+
+@Component
+public class RestAPI {
+
+	private static final String PREVISAO_URL = 
+			"http://api.openweathermap.org/data/2.5/forecast?q={cidade},br&units=metric&mode=json&appid={APPID}&lang=pt";
+	private static final String APPID = "5d71b8112410f808313a689d9c4ebea7";
+	
+	private final RestTemplate restTemplate;
+	
+	public RestAPI (RestTemplateBuilder builder) {
+		this.restTemplate = builder.build();	
+	}
+	
+	public WeatherDTO fecthTempo(String cidade){
+		return restTemplate.getForObject(PREVISAO_URL, WeatherDTO.class, cidade, APPID);
+	}
+	
+}

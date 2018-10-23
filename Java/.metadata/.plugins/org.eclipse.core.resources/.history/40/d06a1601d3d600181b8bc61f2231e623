@@ -1,0 +1,12 @@
+package br.com.cast.recomenda.DTO;
+
+public class FilmeSmallDTO {
+
+	
+	private String imdbID;
+	
+	private String title;
+	private String year;
+	private String tipe;
+	private String poster;
+}
